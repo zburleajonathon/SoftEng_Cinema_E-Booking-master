@@ -1,0 +1,72 @@
+Specify the database b4 working with it. Copy/paste the text below after mysql>:
+mysql> use termprojdb;
+
+To view all table names in database:
+mysql> show tables;
+
+To view all columns and rows of a table:
+mysql> select * from SomeTable;
+
+To view a specific column and its rows of a table:
+mysql> select someColumn from SomeTable; 
+
+To add users (userID will be create automatically, no need to specify):
+mysql> insert into User (email) values ('someEmail@gmail.com');
+
+To add Admins, first create User then:
+mysql> insert into Administrator set adminPassword = 'password', 
+userID = (select userID from User where email = 'someEmail@gmail.com'), 
+adminEmail = 'someEmail@gmail.com';
+
+To add Customers, first create User then (note: phoneNumber is a string, not int):
+mysql> insert into Customer set password = 'password', 
+userID = (select userID from User where email = 'someEmail@gmail.com'), 
+customerEmail = 'someEmail@gmail.com', firstName = 'someName', 
+lastName = 'someName', phoneNumber = '1234567890', status = 'Active', age = 'Adult';
+
+To delete entry in table:
+mysql> delete from PaymentInfo where userID = 7;
+
+To make a column (mostly primary keys) auto_increment:
+mysql> SET FOREIGN_KEY_CHECKS = 0;
+mysql> alter table tbl_name modify column col_name int(11) not null auto_increment;
+mysql> SET FOREIGN_KEY_CHECKS = 1; //make sure to reset this!
+
+To insert 100 seats into a Hall at once (you have to change name in insert statement):
+mysql> drop procedure if exists insertSeats;
+mysql> delimiter //
+CREATE PROCEDURE insertSeats()
+BEGIN
+    DECLARE i int DEFAULT 1;
+    WHILE i <= 120 DO
+        insert into Seat set hallID = (select hallID from Hall where name = 'SciFi Hall'), seatNum = i;
+        SET i = i + 1;
+    END WHILE;
+END;
+//
+mysql> delimiter ;
+mysql> call insertSeats();
+
+
+User for testing registration and confirmation email:
+User.email = user1termprojdb@gmail.com (this is a real email address to test with)
+The password for the above email is: user1password!
+
+System email:
+CinemaBookSys@gmail.com
+System email password:
+Group11A
+
+
+##################################################################
+Running the DB setup script:
+
+1. Log into mysql as an authorized user from project home dir
+$ sudo mysql
+or as root
+$ mysql -u root -p
+
+2. Source the script (make sure database is forward engineered)
+mysql> source other/setupDB.sql
+
+##################################################################

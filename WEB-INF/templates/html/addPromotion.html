@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///home/aaron/Downloads/add_new_promo.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<title>Add New Promotion</title>
+		<style type="text/css">
+		<!--
+		.tab { margin-left: 40px; }
+		-->
+		</style>
+	<style>
+		body {
+			background-color: #C5D1FF;
+		}
+	</style></head>
+	
+	<body>
+		<h1>Add New Promotion
+		</h1>
+		<form action="file:///action_page.php">
+			Enter Promotion Name:<input type="text" name="Promotion Name" value=""><br>
+			<br>
+			Enter Promotion Code:<input type="text" name="Promotion Code" value=""><br>
+			<br>
+			Enter Expiration Date (mm/dd/yyyy):<input type="text" name="Expiration Date" value=""><br>
+			<br>
+			<h4>Choose movies</h4>
+			<input type="checkbox" onclick="toggle(this)"> Select All<br>
+			<input type="checkbox" name="movie1" value="Jumanji"> Jumanji<br>
+			<input type="checkbox" name="movie2" value="Goodwill Hunting"> Goodwill Hunting<br>
+			<input type="checkbox" name="movie3" value="Old School"> Old School<br>
+			<input type="checkbox" name="movie4" value="Up"> Up<br>
+			<input type="checkbox" name="movie5" value="101 Dalmations"> 101 Dalmations<br>
+			<input type="checkbox" name="movie6" value="Black Panther"> Black Panther<br>
+			<input type="checkbox" name="movie7" value="A Beautiful Mind"> A Beautiful Mind<br>
+			<input type="checkbox" name="movie8" value="Sleeping Beauty"> Sleeping Beauty<br>
+			<br>
+			<h4>Choose discount level</h4>
+			<select>
+  				<option value="25% off">25% off</option>
+  				<option value="35% off">35% off</option>
+  				<option value="40% off">40% off</option>
+  				<option value="50% off">50% off</option>
+			</select>
+			<br>
+			<br>
+			<input type="submit" value="Submit">
+			<input type="submit" value="Cancel">
+		</form>
+		<p>Click the "Submit" button to create promotion and send emails or "Cancel" button to 
+		   go to previous screen.</p>
+	
+
+</body></html>

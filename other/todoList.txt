@@ -1,0 +1,25 @@
+
+Update seat status on seating.ftl
+
+Edit browse page dynamically (images)   *might hardcode
+
+Admin Functions:
+ - make user an admin
+ - add movie/delete/update(James)
+ - delete user
+ - add showtime	
+ - add promo(James)
+ - sales reports
+ 
+Helpful prompts for:
+ - bookMovie
+ - seating
+
+Booking:
+ - apply promos to order
+
+Database methods: these are listed in database/needToAdd.txt
+
+Order History
+
+Presentation logistics (aaron)

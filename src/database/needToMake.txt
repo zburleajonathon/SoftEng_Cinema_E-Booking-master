@@ -1,0 +1,19 @@
+These are all the methods needed to be made for the database:
+
+makePromo()- 3
+deletePromo() - 3
+
+<<<<<<< HEAD
+getBooking()
+=======
+deleteCustomer() - 2
+
+getBooking() - 4
+getAllBookings() - 4
+
+makeShowtime() - 2
+
+userToAdmin() - 3
+>>>>>>> 39ad419ac029b05fa1d6fe51c80c5e7239a3aad0
+
+
